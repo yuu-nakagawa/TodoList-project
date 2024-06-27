@@ -23,6 +23,7 @@ Route::group(['middleware' => 'auth'], function() {
 
         Route::get('/folders/{folder}/tasks/{task}/edit', [TaskController::class, 'showEditForm'])->name('tasks.edit');
         Route::post('/folders/{folder}/tasks/{task}/edit', [TaskController::class,'edit']);
+        Route::delete('/folders/{folder}/tasks/{task}/destroy', [TaskController::class,'destroy'])->name('tasks.destroy');
     });
 });
 

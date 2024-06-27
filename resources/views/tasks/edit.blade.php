@@ -38,8 +38,15 @@
                                 <label for="due_date">期限</label>
                                 <input type="text" class="form-control" name="due_date" id="due_date" value="{{ old('due_date') ?? $task->formatted_due_date }}">
                             </div>
-                            <div class="text-right">
-                                <button type="submit" class="btn btn-primary">送信</button>
+                            <div class="col-md-6 text-left">
+                                <button type="submit" class="btn btn-primary">登録</button>
+                            </div>
+                        </form>
+                        <form action="{{ route('tasks.destroy', ['folder' => $task->folder_id,'task' => $task->id]) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <div class="col-md-6 text-right">
+                                <button type="submit" class="btn btn-default">削除</button>
                             </div>
                         </form>
                     </div>

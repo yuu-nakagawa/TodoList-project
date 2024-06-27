@@ -152,6 +152,19 @@ class TaskController extends Controller
     }
 
     /**
+     * 削除処理
+     */
+    public function destroy(Folder $folder,Task $task)
+    {
+        $this->checkRelation($folder,$task);
+        //レコードを削除
+        $task->delete();
+        //削除したら一覧画面にリダイレクト
+        return redirect()->route('tasks.index',[
+            'folder' => $task->folder_id,
+        ]);
+    }
+    /**
      * フォルダとタスクの関連性があるか調べる
      * @param Folder $folder
      * @param Task $task
