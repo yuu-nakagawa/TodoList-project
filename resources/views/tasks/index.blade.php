@@ -40,7 +40,7 @@
                             </thead>
                             <tbody>
                                 @foreach($tasks as $task)
-                                <tr>
+                                <tr style="{{ \Carbon\Carbon::parse($task->formatted_due_date)->lt(\Carbon\Carbon::today()) ? 'background-color: #e6e9ed;' : '' }}">
                                     <td>{{ $task->title }}</td>
                                     <td><span class="label {{ $task->status_class }}">{{ $task->status_label }}</span></td>
                                     <td>{{ $task->formatted_due_date }}</td>
