@@ -13,10 +13,12 @@
                     </div>
                     <div class="list-group">
                         @foreach($folders as $folder)
-                        <a href="{{ route('tasks.index',['folder' => $folder->id]) }}"
-                        class="list-grooup-item {{ $current_folder_id === $folder->id ? 'active' : '' }}">
-                            {{ $folder->title }}
-                        </a>
+                        <div>
+                            <a href="{{ route('tasks.index',['folder' => $folder->id]) }}"
+                            class="list-group-item {{ $current_folder_id === $folder->id ? 'list-group-item-action active-folder' : '' }}" >
+                                {{ $folder->title }}
+                            </a>
+                        </div>
                         @endforeach
                     </div>
                 </nav>
@@ -68,5 +70,8 @@
         padding: 0.2em 0.5em;
         border-radius: 4px;
         border: 1px solid transparent;
+    }
+    .active-folder {
+        background-color : #e6e9ed !important;
     }
 </style>
