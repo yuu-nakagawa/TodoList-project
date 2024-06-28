@@ -129,6 +129,21 @@ class TaskController extends Controller
             'task' => $task,
         ]);
     }
+    /**
+     * タスク削除フォーム
+     * @param Folder $folder
+     * @param Task $task
+     * @return \Illuminate\View\View
+     */
+    public function showDeleteForm(Folder $folder,Task $task)
+    {
+        // echo $folder;
+        echo $task;
+        $this->checkRelation($folder, $task);
+        return view('tasks/delete', [
+            'task' => $task,
+        ]);
+    }
 
     /**
      * タスク編集
