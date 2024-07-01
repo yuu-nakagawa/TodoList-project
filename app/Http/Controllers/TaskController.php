@@ -137,8 +137,6 @@ class TaskController extends Controller
      */
     public function showDeleteForm(Folder $folder,Task $task)
     {
-        // echo $folder;
-        echo $task;
         $this->checkRelation($folder, $task);
         return view('tasks/delete', [
             'task' => $task,
