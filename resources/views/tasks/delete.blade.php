@@ -43,8 +43,13 @@
                             @csrf
                             @method('DELETE')
                             <div class="col-md-12 text-right">
-                                <button type="submit" class="btn btn-danger">削除</button>
+                                <button type="submit" class="btn btn-danger" onclick="sakujo()">削除</button>
                             </div>
+                            <script>
+                                function sakujo() {
+                                    alert('削除しました。');
+                                }
+                            </script>
                         </form>
                     </div>
                 </nav>
