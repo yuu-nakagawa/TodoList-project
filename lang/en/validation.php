@@ -33,7 +33,7 @@ return [
     ],
     'boolean' => 'The :attribute field must be true or false.',
     'can' => 'The :attribute が確認欄と一致していません。',
-    'confirmed' => ':attribute field confirmation does not match.',
+    'confirmed' => ':attribute が確認欄と一致していません。',
     // 'confirmed' => 'The :attribute field confirmation does not match.',
     'contains' => 'The :attribute field is missing a required value.',
     'current_password' => 'The password is incorrect.',
